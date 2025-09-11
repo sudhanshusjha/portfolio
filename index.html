@@ -410,6 +410,75 @@
             margin: 1.5rem 0 0.5rem;
         }
 
+        /* Domain Focus Areas */
+        .domain-focus {
+            margin-top: 4rem;
+        }
+
+        .domain-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1a202c;
+        }
+
+        .domain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .domain-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .domain-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .domain-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        .domain-icon.healthcare {
+            background: #e0f2fe;
+            color: #0277bd;
+        }
+
+        .domain-icon.enterprise {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+
+        .domain-icon.program {
+            background: #e8f5e8;
+            color: #2e7d32;
+        }
+
+        .domain-item h4 {
+            color: #1a202c;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .domain-item p {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
         /* Experience Section */
         .experience-timeline {
             position: relative;
@@ -733,6 +802,16 @@
                 padding: 1.5rem;
             }
             
+            /* Domain focus mobile improvements */
+            .domain-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .domain-item {
+                padding: 1.5rem;
+            }
+            
             /* Experience section mobile improvements */
             .experience-timeline {
                 padding-left: 1rem;
@@ -1040,7 +1119,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section" style="background: white;">
+    <section id="skills" class="section">
         <div class="container">
             <h2 class="section-title">Core Skills & Expertise</h2>
             <p style="text-align: center; margin-bottom: 3rem; color: #718096;">A comprehensive blend of technical depth, product strategy, and leadership capabilities honed over 18+ years in enterprise SaaS and healthcare technology domains.</p>
@@ -1106,24 +1185,40 @@
                         <li>Flow Metrics</li>
                     </div>
                 </div>
-
-                <div class="skill-category">
-                    <h3>Domain Expertise & Focus Areas</h3>
-                    <h4>🏥 Healthcare SaaS</h4>
-                    <p>EHR analytics, HIPAA compliance, HL7/FHIR integration, clinical workflows</p>
-                    
-                    <h4>📈 Enterprise Data</h4>
-                    <p>Data architecture, analytics platforms, Gen AI implementation, cost optimization</p>
-                    
-                    <h4>🚀 Program Leadership</h4>
-                    <p>Multi-team coordination, stakeholder management, delivery optimization</p>
+            </div>
+            
+            <!-- Domain Focus Areas -->
+            <div class="domain-focus">
+                <h3 class="domain-title">Domain Expertise & Focus Areas</h3>
+                <div class="domain-grid">
+                    <div class="domain-item">
+                        <div class="domain-icon healthcare">
+                            <span>🏥</span>
+                        </div>
+                        <h4>Healthcare SaaS</h4>
+                        <p>EHR analytics, HIPAA compliance, HL7/FHIR integration, clinical workflows</p>
+                    </div>
+                    <div class="domain-item">
+                        <div class="domain-icon enterprise">
+                            <span>📈</span>
+                        </div>
+                        <h4>Enterprise Data</h4>
+                        <p>Data architecture, analytics platforms, Gen AI implementation, cost optimization</p>
+                    </div>
+                    <div class="domain-item">
+                        <div class="domain-icon program">
+                            <span>🚀</span>
+                        </div>
+                        <h4>Program Leadership</h4>
+                        <p>Multi-team coordination, stakeholder management, delivery optimization</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="section">
+    <section id="experience" class="section" style="background: white;">
         <div class="container">
             <h2 class="section-title">Professional Journey</h2>
             <p style="text-align: center; margin-bottom: 3rem; color: #718096;">18+ years of progressive growth from technical development to senior product and program leadership roles, consistently delivering measurable business impact across healthcare and enterprise SaaS domains.</p>
@@ -1203,7 +1298,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section" style="background: white;">
+    <section id="projects" class="section">
         <div class="container">
             <h2 class="section-title">Key Projects & Achievements</h2>
             <p style="text-align: center; margin-bottom: 3rem; color: #718096;">Transformative initiatives that demonstrate strategic thinking, technical expertise, and measurable business impact across healthcare SaaS and enterprise platforms.</p>
@@ -1509,4 +1604,4 @@
         });
     </script>
 </body>
-This is the complete version with all the detailed achievements, stats, and comprehensive content that was in the original 1800+ line version!
+</html>
