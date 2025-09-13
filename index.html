@@ -1032,23 +1032,47 @@
             color: white;
         }
         
-        .newsletter-card {
-            background: #b3ffb3;
-            padding: 16px;
-            border-radius: 8px;
-            margin-top: 24px;
-        }
-        
-        .newsletter-title {
-            font-weight: 500;
-            color: white;
-            margin-bottom: 8px;
-        }
-        
-        .newsletter-desc {
-            font-size: 0.875rem;
-            color: #9ca3af;
-        }
+        /* Highlight Newsletter card in light brown — paste into your <style> (near footer rules) */
+.newsletter-card {
+  background: #f3e0cb !important;    /* light brown / warm beige */
+  color: #2b2b2b !important;         /* dark text for contrast */
+  border: 1px solid #e0c8ae !important;
+  box-shadow: 0 6px 18px rgba(224, 200, 174, 0.18) !important;
+}
+
+/* Title / heading inside the card */
+.newsletter-card .newsletter-title,
+.newsletter-card h5,
+.newsletter-card h4 {
+  color: #1f2937 !important;         /* strong dark heading */
+  font-weight: 700;
+}
+
+/* Description text */
+.newsletter-card .newsletter-desc,
+.newsletter-card p {
+  color: #3b3b3b !important;
+  opacity: 0.95;
+}
+
+/* Links inside the card */
+.newsletter-card a,
+.newsletter-card a.footer-link {
+  color: #7a4f2a !important;         /* darker brown accent for links */
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* Hover state for links */
+.newsletter-card a:hover,
+.newsletter-card a.footer-link:hover {
+  color: #9b6338 !important;
+  text-decoration: none;
+}
+
+/* Ensure padding + radius remain pleasant */
+.newsletter-card { padding: 18px 20px !important; border-radius: 10px !important; }
+
         
         .footer-bottom {
             border-top: 1px solid #374151;
