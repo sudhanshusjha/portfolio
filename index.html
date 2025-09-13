@@ -1405,6 +1405,58 @@
 }
 
         }
+            /* ===== Footer / Newsletter: visual fix and remove tiny right gap ===== */
+
+/* remove tiny horizontal overflow that causes the thin right gap */
+html, body {
+  overflow-x: hidden;
+}
+
+/* greenish-white newsletter block */
+.newsletter-card {
+  background: #ecfff4;            /* pale green/white */
+  border: 1px solid #cfeee3;     /* soft green border */
+  color: #072724;                /* dark text for contrast */
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(10, 60, 48, 0.06);
+  display: block;                /* make it a visible block inside footer column */
+  max-width: 360px;              /* prevents it from getting too wide */
+  margin-top: 12px;
+}
+
+/* heading/link styling inside the card */
+.newsletter-card .newsletter-title {
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.newsletter-card .newsletter-title a {
+  color: #0b5a44;
+  text-decoration: none;
+}
+.newsletter-card .newsletter-title a:hover { text-decoration: underline; }
+
+/* description inside the card */
+.newsletter-card .newsletter-desc {
+  margin: 0;
+  color: #19493f;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* align footer inner container precisely with other sections */
+.footer { padding-left: 0; padding-right: 0; box-sizing: border-box; }
+.footer-container {
+  max-width: var(--page-max, 1200px);
+  margin: 0 auto;
+  padding-left: var(--page-gutter, 24px);
+  padding-right: var(--page-gutter, 24px);
+  box-sizing: border-box;
+}
+/* ensure the grid has no unexpected offsets */
+.footer-grid { margin: 0; padding: 0; box-sizing: border-box; }
+
     </style>
 </head>
 <body>
@@ -2267,13 +2319,18 @@
                         </a>
                     </div>
                     
-                    <div class="newsletter-card;">
-                        <h5 class="newsletter-title"> 
-                         <a href="https://www.linkedin.com/newsletters/7316082821654032384/" target="_blank" class="footer-link">
-                            <B> Tech PMx Junction </B>
-                             </h5>
-                        <p class="newsletter-desc">Professional newsletter sharing real-world lessons in product, project, and program management.</p>
-                    </div>
+                    <!-- REPLACE this block in the footer -->
+                    <div class="newsletter-card">
+                      <h5 class="newsletter-title">
+                        <a href="https://www.linkedin.com/newsletters/7316082821654032384/" target="_blank" rel="noopener noreferrer">
+                          Tech PMx Junction
+                        </a>
+                      </h5>
+                      <p class="newsletter-desc">
+                        Professional newsletter sharing real-world lessons in product, project, and program management.
+                      </p>
+</div>
+
                 </div>
             </div>
             
