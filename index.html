@@ -20,7 +20,68 @@
             line-height: 1.6;
             color: #374151;
         }
-        
+        /* ===== IMPACTED AREA FIX: paste into your style block ===== */
+
+/* Anchor & sizing for the image + stat cards */
+.profile-container {
+  position: relative;      /* keep stats anchored to the container */
+  overflow: visible;       /* allow stat cards to sit outside rounded corners */
+  width: 100%;
+  max-width: 400px;        /* desktop cap */
+  margin: 0 auto;          /* center horizontally */
+}
+
+/* ensure the hero-right doesn't force an oversized image */
+.hero-right {
+  width: auto;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 420px;
+}
+
+/* Responsive profile image — fixes "too large" issue */
+.profile-img {
+  width: 100%;             /* fluid up to max-width */
+  max-width: 400px;        /* cap on larger screens */
+  height: auto;            /* IMPORTANT: remove fixed/huge height */
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+}
+
+/* keep stat cards visually outside corners but not covering face (small negative offset) */
+.floating-stat-1 { top: -18px; right: -18px; }
+.floating-stat-2 { bottom: -18px; left: -18px; }
+
+/* ===== Mobile overrides ===== */
+@media (max-width: 768px) {
+  /* smaller container on phones so image doesn't dominate */
+  .profile-container { max-width: 320px; }
+
+  .hero-right { max-width: 360px; width:100%; padding: 0 8px; }
+
+  .profile-img { max-width: 320px; width: 100%; height: auto; border-radius: 12px; }
+
+  /* Show hamburger and ensure it sits above everything */
+  #nav-toggle {
+    display: block !important;   /* force visible on mobile */
+    z-index: 3000;               /* sit above nav panel */
+    color: var(--text);          /* ensure visible */
+    background: transparent;
+    border: none;
+    font-size: 1.4rem;
+    padding: 6px 8px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  /* Ensure nav (and its slide panel) are above main content */
+  nav { z-index: 2000; }
+  nav.open .nav-links { z-index: 2100; }
+}
+
         /* Header Navigation */
         .header {
             position: fixed;
