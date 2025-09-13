@@ -14,17 +14,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        <script>
-              (function(){
-                const nav = document.querySelector('nav');
-                const btn = document.getElementById('nav-toggle');
-                if(!btn || !nav) return;
-                btn.addEventListener('click', ()=> {
-                const open = nav.classList.toggle('open');
-                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-                });
-          })();
-</script>
+
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
@@ -67,8 +57,7 @@
 
 /* ===== Mobile overrides ===== */
 @media (max-width: 768px) {
-  /* smaller container on phones so image doesn't dominate */
-  .profile-container { max-width: 320px; }
+ 
 
   .hero-right { max-width: 360px; width:100%; padding: 0 8px; }
 
@@ -321,11 +310,6 @@
             gap: 32px;
         }
         
-/* --- IMPACTED AREA: minimal patch --- */
-/* Ensure stats can sit outside the image edges */
-.profile-container {
-  position: relative;   /* anchor for absolute stats */
-  overflow: visible;    /* allow cards to sit outside rounded edge */
 }
 
 /* Base floating stat (slightly smaller padding to reduce footprint) */
@@ -1088,7 +1072,56 @@
         .footer-nav-link:hover {
             color: white;
         }
-        
+        /* show hamburger on mobile and make nav a dropdown panel */
+#nav-toggle {
+  display: none; /* desktop default */
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+/* Mobile-specific nav behavior */
+@media (max-width: 768px) {
+  /* show the toggle button */
+  #nav-toggle { display: block !important; z-index: 2200; }
+
+  /* transform the horizontal nav into a vertical dropdown panel */
+  .nav-menu {
+    position: absolute;
+    top: 64px;                /* height of header / adjust if different */
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 18px;
+    transform: translateY(-6px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 220ms ease, opacity 220ms ease;
+    box-shadow: 0 8px 30px rgba(2,6,23,0.08);
+    border-bottom: 1px solid rgba(15,23,42,0.04);
+    z-index: 2100;
+  }
+
+  /* when parent container has .open, show the menu */
+  .nav-container.open .nav-menu {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* make touch targets larger */
+  .nav-menu .nav-link,
+  .nav-menu .nav-cta {
+    display: block;
+    padding: 10px 6px;
+    font-size: 18px;
+  }
+}
+
         /* Responsive Design */
         @media (min-width: 640px) {
             .stat-divider {
@@ -1191,16 +1224,15 @@
     <header class="header">
         <div class="nav-container">
             <a href="#hero" class="logo">Sudhanshu S Jha</a>
-            <nav class="nav-menu">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <a href="#contact" class="nav-cta">Get In Touch</a>
-                <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 
-            </nav>
+        <!-- move the toggle here so it's not hidden when .nav-menu is hidden on mobile -->
+        <button id="nav-toggle" aria-label="Open menu" aria-expanded="false" style="display:none;">☰</button>
+
+        <nav class="nav-menu" id="primary-nav">
+        <a href="#about" class="nav-link">About</a>
+        ...
+        <a href="#contact" class="nav-cta">Get In Touch</a>
+        </nav>
         </div>
     </header>
 
@@ -2091,6 +2123,42 @@
                 header.style.boxShadow = 'none';
             }
         });
+        <script>
+(function(){
+  const navContainer = document.querySelector('.nav-container');
+  const btn = document.getElementById('nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  if(!navContainer || !btn || !navMenu) return;
+
+  btn.addEventListener('click', () => {
+    const isOpen = navContainer.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+
+  // Close when a nav link is clicked (mobile)
+  navMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      if(navContainer.classList.contains('open')){
+        navContainer.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Open menu');
+      }
+    });
+  });
+
+  // Close when clicking outside (mobile)
+  document.addEventListener('click', (e) => {
+    if(!navContainer.classList.contains('open')) return;
+    if(navContainer.contains(e.target) || btn.contains(e.target)) return;
+    navContainer.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Open menu');
+  });
+})();
+</script>
+
     </script>
 </body>
 </html>
