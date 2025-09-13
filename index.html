@@ -1354,6 +1354,56 @@
         /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
+            /* ===== ALIGN FOOTER WITH PAGE CONTENT (paste near end of <style>) ===== */
+/* Use same inner page padding for header / sections / footer */
+:root { --page-gutter: 24px; --page-max: 1200px; }
+
+/* Ensure the main section container uses the same spacing (idempotent if already present) */
+.section-container,
+.nav-container {
+  box-sizing: border-box;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+  max-width: var(--page-max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Make footer container align with .section-container exactly */
+.footer {
+  box-sizing: border-box;
+  padding-left: 0;   /* footer outer padding kept by .footer-container */
+  padding-right: 0;
+}
+
+/* Ensure footer inner container matches page width and gutter */
+.footer-container {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+  box-sizing: border-box;
+}
+
+/* Remove any unexpected left offset in the footer grid */
+.footer-grid {
+  margin-left: 0;
+  padding-left: 0;
+  box-sizing: border-box;
+}
+
+/* On very narrow viewports keep the mobile spacing (unchanged) */
+@media (max-width: 820px) {
+  .footer-container,
+  .section-container,
+  .nav-container { padding-left: 16px; padding-right: 16px; }
+}
+
+/* Optional: if you have ultra-wide header padding interfering, pin the logo area */
+@media (min-width: 821px) {
+  .logo { flex: 0 0 auto; }
+}
+
         }
     </style>
 </head>
