@@ -1579,6 +1579,53 @@ html, body {
 .theme-slate .platform-desc,
 .theme-slate li { color: #334155; }
 
+/* Shared Platform Capabilities */
+.shared-platforms {
+  margin-top: 32px;
+}
+
+.shared-details {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px 20px;
+}
+
+.shared-summary {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f172a;
+  cursor: pointer;
+  list-style: none;
+}
+
+.shared-summary::-webkit-details-marker {
+  display: none;
+}
+
+.shared-hint {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.shared-content {
+  margin-top: 16px;
+}
+
+.shared-content ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.shared-content li {
+  font-size: 0.85rem;
+  color: #334155;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
 
     </style>
 </head>
@@ -1868,6 +1915,47 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
 
 </div>
 </div>
+      </div> <!-- end platform-grid -->
+
+<!-- Shared Platform Capabilities -->
+
+    <div class="shared-platforms">
+
+  <details class="shared-details">
+    <summary class="shared-summary">
+      Shared Platform Capabilities
+      <span class="shared-hint">Supporting systems that enable scale across products</span>
+    </summary>
+
+    <div class="shared-content">
+      <ul>
+        <li>
+          <strong>Core Healthcare Data Platform</strong> — Foundational ingestion, normalization,
+          lineage, and quality controls supporting analytics, workflows, and AI use cases.
+        </li>
+
+        <li>
+          <strong>Workflow & Case Management Platform</strong> — Regulated workflows for clinical
+          reviews, quality investigations, escalations, SLAs, and audit trails.
+        </li>
+
+        <li>
+          <strong>Internal Platform Services</strong> — Shared services including notifications,
+          reporting engines, configuration frameworks, and rules orchestration.
+        </li>
+
+        <li>
+          <strong>AI / ML Enablement Layer (Governed)</strong> — Selective AI use cases such as risk
+          scoring, anomaly detection, and provider insights with explainability and validation
+          guardrails.
+        </li>
+      </ul>
+    </div>
+  </details>
+
+</div>
+
+
 </section>
 
             <!-- Domain Focus Areas -->
