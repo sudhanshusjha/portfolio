@@ -1500,6 +1500,85 @@ html, body {
   color: #334155;
   margin-bottom: 6px;
 }
+/* Base Card */
+.platform-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.platform-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+
+/* Typography */
+.platform-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.platform-desc {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.platform-card ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.platform-card ul li {
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+
+/* ===== COLOR THEMES ===== */
+
+/* Blue */
+.theme-blue {
+  border-left: 5px solid #3b82f6;
+}
+.theme-blue h3 { color: #1e3a8a; }
+.theme-blue .platform-desc,
+.theme-blue li { color: #1f2937; }
+
+/* Green */
+.theme-green {
+  border-left: 5px solid #10b981;
+}
+.theme-green h3 { color: #065f46; }
+.theme-green .platform-desc,
+.theme-green li { color: #064e3b; }
+
+/* Purple */
+.theme-purple {
+  border-left: 5px solid #8b5cf6;
+}
+.theme-purple h3 { color: #5b21b6; }
+.theme-purple .platform-desc,
+.theme-purple li { color: #4c1d95; }
+
+/* Amber */
+.theme-amber {
+  border-left: 5px solid #f59e0b;
+}
+.theme-amber h3 { color: #92400e; }
+.theme-amber .platform-desc,
+.theme-amber li { color: #78350f; }
+
+/* Slate / Neutral */
+.theme-slate {
+  border-left: 5px solid #64748b;
+}
+.theme-slate h3 { color: #0f172a; }
+.theme-slate .platform-desc,
+.theme-slate li { color: #334155; }
+
 
     </style>
 </head>
@@ -1699,15 +1778,16 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
     <h2 class="section-title">Platform Ownership & Systems Leadership</h2>
     <p class="section-subtitle">
       Healthcare SaaS platforms owned across patient records, provider data, interoperability,
-      quality systems, analytics, and compliance—designed for scale, safety, and executive decision-making.
+      quality systems, analytics, and compliance designed for scale, safety, and executive decision-making.
     </p>
 <div class="platform-grid">
 
   <!-- Card 1 -->
   <div class="platform-card">
-    <h3>Enterprise Patient Record (EPR)</h3>
+      <div class="platform-card theme-blue">
+    <h3>Electronic Patient Record (EPR), along with EMR/EHR</h3>
     <p class="platform-desc">
-      Unified longitudinal patient record aggregating data across EHR/EMR, labs, imaging, pharmacy, and claims.
+      Unified digital record of a patient’s medical history, diagnoses, treatments, lab results, and care interactions, enabling seamless, coordinated, and data-driven healthcare delivery across providers..
     </p>
     <ul>
       <li>Single trusted patient view</li>
@@ -1718,6 +1798,7 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
 
   <!-- Card 2 -->
   <div class="platform-card">
+    <div class="platform-card theme-green">
     <h3>Provider Data Management</h3>
     <p class="platform-desc">
       Master data governance for providers, clinicians, and facilities across credentialing and lifecycle workflows.
@@ -1731,6 +1812,7 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
 
   <!-- Card 3 -->
   <div class="platform-card">
+    <div class="platform-card theme-purple">
     <h3>Clinical Interoperability Platform</h3>
     <p class="platform-desc">
       Reliable healthcare data exchange using HL7, FHIR, CCD, and APIs across internal and external systems.
@@ -1744,6 +1826,7 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
 
   <!-- Card 4 -->
   <div class="platform-card">
+      <div class="platform-card theme-amber">
     <h3>Quality & Provider Performance (OPPE / FPPE)</h3>
     <p class="platform-desc">
       Provider evaluation, quality review workflows, and dashboards for clinical and QA governance.
@@ -1757,6 +1840,7 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
 
   <!-- Card 5 -->
   <div class="platform-card">
+    <div class="platform-card theme-slate">
     <h3>Clinical Analytics & Insights</h3>
     <p class="platform-desc">
       Decision-grade analytics for clinical, operational, and executive leadership teams.
@@ -1770,6 +1854,7 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
 
   <!-- Card 6 -->
   <div class="platform-card">
+    <div class="platform-card theme-blue">
     <h3>Platform Governance & Compliance</h3>
     <p class="platform-desc">
       Security, privacy, audit, and compliance controls across healthcare platforms.
