@@ -1686,6 +1686,50 @@ html, body {
   height: 100%;
   background: currentColor;
 }
+.micro-labels span {
+  position: relative;
+  cursor: default;
+}
+
+/* Tooltip */
+.micro-labels span::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  line-height: 1.3;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 20;
+}
+
+/* Tooltip arrow */
+.micro-labels span::before {
+  content: "";
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #0f172a transparent transparent transparent;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Show on hover / tap */
+.micro-labels span:hover::after,
+.micro-labels span:hover::before {
+  opacity: 1;
+}
 
     </style>
 </head>
