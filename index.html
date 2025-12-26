@@ -1593,20 +1593,20 @@ html, body {
 
 /* ===== COLOR THEMES ===== */
 
-theme-blue {
-  color: #2563eb; /* stronger blue */
+.theme-blue {
+  --accent-color: #2563eb;
 }
 
 .theme-purple {
-  color: #7c3aed; /* stronger purple */
+  --accent-color: #7c3aed;
 }
 
 .theme-amber {
-  color: #d97706; /* darker amber */
+  --accent-color: #d97706;
 }
 
 .theme-slate {
-  color: #475569; /* darker slate */
+  --accent-color: #475569;
 }
 
 /* Shared Platform Capabilities */
@@ -1665,6 +1665,15 @@ theme-blue {
   box-shadow: 0 12px 28px rgba(0,0,0,0.06);
   text-align: center;
   overflow: hidden;
+}
+.map-layer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: var(--accent-color);
 }
 
 /* Strong left accent bar (guaranteed visible) */
