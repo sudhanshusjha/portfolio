@@ -1822,6 +1822,32 @@ html, body {
   --pill-color: #115e59;
 }
 
+/* ===============================
+   DESKTOP TOOLTIP & PILL VISIBILITY FIX
+   =============================== */
+
+/* Ensure pills & tooltips are never clipped */
+.micro-labels,
+.micro-labels > span {
+  overflow: visible !important;
+}
+
+/* Allow tooltips to escape card/container bounds */
+.platform-card,
+.section-container,
+.skills,
+.about,
+.projects {
+  overflow: visible !important;
+}
+
+/* Desktop hover explicitly enabled */
+@media (hover: hover) {
+  .micro-labels > span:hover::after,
+  .micro-labels > span:hover::before {
+    opacity: 1;
+  }
+}
 
 
     </style>
