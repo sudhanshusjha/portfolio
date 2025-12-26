@@ -606,7 +606,61 @@
         .skill-tag:hover {
             transform: scale(1.05);
         }
-        
+        .platform-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.platform-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 22px 24px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  border-left: 6px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.platform-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+}
+
+.platform-card h3 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.platform-desc {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 12px;
+}
+
+.platform-card ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.platform-card li {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+/* Color themes */
+.theme-blue   { border-color: #3b82f6; }
+.theme-green  { border-color: #10b981; }
+.theme-purple { border-color: #8b5cf6; }
+.theme-orange { border-color: #f97316; }
+.theme-indigo { border-color: #6366f1; }
+.theme-teal   { border-color: #14b8a6; }
+.theme-slate  { border-color: #64748b; }
+.theme-cyan   { border-color: #06b6d4; }
+.theme-rose   { border-color: #f43f5e; }
+
         /* Experience Section */
         .experience {
             background: white;
@@ -1818,105 +1872,138 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
             </div>
         </div>
     </section>
-
-    <!-- Platform Ownership Section -->
-<section id="platforms" class="skills">
+<section id="platform-ownership" class="skills">
   <div class="section-container">
+
     <h2 class="section-title">Platform Ownership & Systems Leadership</h2>
     <p class="section-subtitle">
-      Healthcare SaaS platforms owned across patient records, provider data, interoperability,
-      quality systems, analytics, and compliance designed for scale, safety, and executive decision-making.
+      Executive ownership of mission-critical healthcare platforms spanning clinical data, interoperability, analytics, workflows, and compliance.
     </p>
-<div class="platform-grid">
 
-  <!-- Card 1 -->
-  <div class="platform-card">
+    <div class="platform-grid">
+
+      <!-- Card 1 -->
       <div class="platform-card theme-blue">
-    <h3>Electronic Patient Record (EPR), along with EMR/EHR</h3>
-    <p class="platform-desc">
-      Unified digital record of a patient’s medical history, diagnoses, treatments, lab results, and care interactions, enabling seamless, coordinated, and data-driven healthcare delivery across providers..
-    </p>
-    <ul>
-      <li>Single trusted patient view</li>
-      <li>Reduced duplicate records</li>
-      <li>Improved clinical decision accuracy</li>
-    </ul>
+        <h3>Enterprise Patient Record (EPR)</h3>
+        <p class="platform-desc">
+          Unified longitudinal patient record aggregating data across EHR/EMR, labs, imaging, pharmacy, and claims.
+        </p>
+        <ul>
+          <li>Single trusted patient view</li>
+          <li>Reduced duplicate records</li>
+          <li>Improved clinical decision accuracy</li>
+        </ul>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="platform-card theme-green">
+        <h3>Provider Data Management</h3>
+        <p class="platform-desc">
+          Master data governance for providers, clinicians, and facilities across credentialing and lifecycle workflows.
+        </p>
+        <ul>
+          <li>Accurate provider attribution</li>
+          <li>Improved quality reporting</li>
+          <li>Reduced compliance errors</li>
+        </ul>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="platform-card theme-purple">
+        <h3>Clinical Interoperability Platform</h3>
+        <p class="platform-desc">
+          Reliable healthcare data exchange using HL7, FHIR, CCD, and APIs across internal and external systems.
+        </p>
+        <ul>
+          <li>Faster partner onboarding</li>
+          <li>Reduced integration failures</li>
+          <li>Consistent clinical data flow</li>
+        </ul>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="platform-card theme-orange">
+        <h3>Quality & Provider Performance (OPPE / FPPE)</h3>
+        <p class="platform-desc">
+          Provider evaluation, quality review workflows, and dashboards for clinical and QA governance.
+        </p>
+        <ul>
+          <li>Improved provider performance</li>
+          <li>Reduced repeat quality issues</li>
+          <li>Higher patient satisfaction</li>
+        </ul>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="platform-card theme-indigo">
+        <h3>Clinical Analytics & Insights</h3>
+        <p class="platform-desc">
+          Decision-grade analytics for clinical, operational, and executive leadership teams.
+        </p>
+        <ul>
+          <li>Data-driven care decisions</li>
+          <li>Reduced manual reporting</li>
+          <li>Improved executive visibility</li>
+        </ul>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="platform-card theme-teal">
+        <h3>Workflow & Case Management</h3>
+        <p class="platform-desc">
+          Regulated workflows for clinical reviews, investigations, escalations, and approvals.
+        </p>
+        <ul>
+          <li>Faster resolution cycles</li>
+          <li>Improved audit readiness</li>
+          <li>Reduced operational burden</li>
+        </ul>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="platform-card theme-slate">
+        <h3>Platform Governance, Security & Compliance</h3>
+        <p class="platform-desc">
+          Platform-wide controls for access, auditability, privacy, and regulatory compliance.
+        </p>
+        <ul>
+          <li>HIPAA & PHI/PII compliance</li>
+          <li>Role-based access & audit trails</li>
+          <li>Enterprise trust & risk reduction</li>
+        </ul>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="platform-card theme-cyan">
+        <h3>Shared Platform Capabilities</h3>
+        <p class="platform-desc">
+          Reusable platform services enabling consistency, scale, and delivery velocity across products.
+        </p>
+        <ul>
+          <li>Notifications & reporting engines</li>
+          <li>Rules & configuration frameworks</li>
+          <li>Performance & reliability standards</li>
+        </ul>
+      </div>
+
+      <!-- Card 9 -->
+      <div class="platform-card theme-rose">
+        <h3>AI / ML Enablement Layer</h3>
+        <p class="platform-desc">
+          Governed AI enablement for risk scoring, quality insights, and early anomaly detection.
+        </p>
+        <ul>
+          <li>Explainable & validated models</li>
+          <li>Clinical safety guardrails</li>
+          <li>High-impact decision support</li>
+        </ul>
+      </div>
+
+    </div>
   </div>
+</section>
 
-  <!-- Card 2 -->
-  <div class="platform-card">
-    <div class="platform-card theme-green">
-    <h3>Provider Data Management</h3>
-    <p class="platform-desc">
-      Master data governance for providers, clinicians, and facilities across credentialing and lifecycle workflows.
-    </p>
-    <ul>
-      <li>Accurate provider attribution</li>
-      <li>Improved quality reporting</li>
-      <li>Reduced compliance errors</li>
-    </ul>
-  </div>
-
-  <!-- Card 3 -->
-  <div class="platform-card">
-    <div class="platform-card theme-purple">
-    <h3>Clinical Interoperability Platform</h3>
-    <p class="platform-desc">
-      Reliable healthcare data exchange using HL7, FHIR, CCD, and APIs across internal and external systems.
-    </p>
-    <ul>
-      <li>Faster partner onboarding</li>
-      <li>Reduced integration failures</li>
-      <li>Consistent clinical data flow</li>
-    </ul>
-  </div>
-
-  <!-- Card 4 -->
-  <div class="platform-card">
-      <div class="platform-card theme-amber">
-    <h3>Quality & Provider Performance (OPPE / FPPE)</h3>
-    <p class="platform-desc">
-      Provider evaluation, quality review workflows, and dashboards for clinical and QA governance.
-    </p>
-    <ul>
-      <li>Improved provider performance</li>
-      <li>Reduced repeat quality issues</li>
-      <li>Higher patient satisfaction</li>
-    </ul>
-  </div>
-
-  <!-- Card 5 -->
-  <div class="platform-card">
-    <div class="platform-card theme-slate">
-    <h3>Clinical Analytics & Insights</h3>
-    <p class="platform-desc">
-      Decision-grade analytics for clinical, operational, and executive leadership teams.
-    </p>
-    <ul>
-      <li>Data-driven care decisions</li>
-      <li>Reduced manual reporting</li>
-      <li>Improved operational visibility</li>
-    </ul>
-  </div>
-
-  <!-- Card 6 -->
-  <div class="platform-card">
-    <div class="platform-card theme-blue">
-    <h3>Platform Governance & Compliance</h3>
-    <p class="platform-desc">
-      Security, privacy, audit, and compliance controls across healthcare platforms.
-    </p>
-    <ul>
-      <li>Audit readiness</li>
-      <li>Reduced compliance exposure</li>
-      <li>Increased enterprise trust</li>
-    </ul>
-  </div>
-
-</div>
-</div>
-      </div> <!-- end platform-grid -->
-
+   
 <!-- Shared Platform Capabilities -->
 
     <div class="shared-platforms">
