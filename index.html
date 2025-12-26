@@ -1705,19 +1705,6 @@ html, body {
   margin-top: 12px;
 }
 
-.micro-labels > span {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 12px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  border-radius: 999px;
-  white-space: nowrap;
-  position: relative;
-  cursor: default;
-
-  background-color: var(--pill-bg);
-  color: var(--pill-color);
 }
 
 /* Tooltip */
@@ -1848,7 +1835,67 @@ html, body {
     opacity: 1;
   }
 }
+/* ===============================
+   MICRO LABEL PILLS — DESKTOP SAFE
+   =============================== */
 
+.micro-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.micro-labels span {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 999px;
+  white-space: nowrap;
+  position: relative;
+  cursor: default;
+}
+
+/* --- HARD COLORS (NO CSS VARS) --- */
+.pill-epr         { background:#e0f2fe; color:#0369a1; }
+.pill-provider    { background:#dbeafe; color:#1e40af; }
+.pill-quality     { background:#ecfeff; color:#0f766e; }
+.pill-workflow    { background:#f0fdfa; color:#115e59; }
+.pill-interop     { background:#eef2ff; color:#3730a3; }
+.pill-data        { background:#dcfce7; color:#166534; }
+.pill-ai          { background:#ede9fe; color:#5b21b6; }
+.pill-governance1 { background:#fff7ed; color:#9a3412; }
+.pill-governance2 { background:#fff7ed; color:#9a3412; }
+.pill-governance3 { background:#ede9fe; color:#5b21b6; }
+.pill-governance4 { background:#f0fdfa; color:#115e59; }
+
+.micro-labels span::after {
+  content: attr(data-tip);
+  position: fixed;              /* KEY FIX */
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  background: #111827;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  max-width: 280px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 99999;
+  transition: opacity 0.15s ease;
+}
+
+.micro-labels span:hover::after,
+.micro-labels span:active::after {
+  opacity: 1;
+}
 
     </style>
 </head>
@@ -2041,7 +2088,7 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
             </div>
         </div>
     </section>
-<section id="platform-ownership" class="skills">
+<section id="skills" class="skills">
   <div class="section-container">
 
     <h2 class="section-title">Platform Ownership & Systems Leadership</h2>
