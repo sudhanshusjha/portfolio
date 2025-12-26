@@ -1691,44 +1691,77 @@ html, body {
   cursor: default;
 }
 
-/* Tooltip */
+/* === Micro-labels container === */
+.micro-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* === Micro-label pills === */
+.micro-labels span {
+  position: relative;
+  font-size: 0.7rem;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #334155;
+  font-weight: 500;
+  cursor: default;
+  white-space: nowrap;
+}
+
+/* === Tooltip bubble === */
 .micro-labels span::after {
   content: attr(data-tip);
   position: absolute;
-  bottom: 140%;
+  bottom: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
   background: #0f172a;
-  color: #f8fafc;
+  color: #ffffff;
   padding: 6px 10px;
   border-radius: 6px;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   line-height: 1.3;
-  white-space: nowrap;
+  width: max-content;
+  max-width: 220px;
+  text-align: center;
+  white-space: normal;
   opacity: 0;
   pointer-events: none;
+  z-index: 9999;
   transition: opacity 0.2s ease;
-  z-index: 20;
 }
 
-/* Tooltip arrow */
+/* === Tooltip arrow === */
 .micro-labels span::before {
   content: "";
   position: absolute;
-  bottom: 120%;
+  bottom: calc(100% + 2px);
   left: 50%;
   transform: translateX(-50%);
-  border-width: 5px;
+  border-width: 6px;
   border-style: solid;
   border-color: #0f172a transparent transparent transparent;
   opacity: 0;
   transition: opacity 0.2s ease;
 }
 
-/* Show on hover / tap */
+/* === Show tooltip on hover (desktop) === */
 .micro-labels span:hover::after,
 .micro-labels span:hover::before {
   opacity: 1;
+}
+
+/* === Mobile support (long press / tap) === */
+@media (hover: none) {
+  .micro-labels span:active::after,
+  .micro-labels span:active::before {
+    opacity: 1;
+  }
 }
 
     </style>
@@ -2063,21 +2096,21 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
                         </div>
                         <h4 style="font-size: 1.125rem; font-weight: 600; color: #1f2937; margin-bottom: 8px;">Healthcare SaaS Platforms & Regulatory Ownership</h4>
                         <div class="micro-labels">
-  <span data-tip="Unified longitudinal patient record aggregating data across EHR/EMR, labs, and claims.">
-    EPR
-  </span>
-  <span data-tip="Master data management for providers, clinicians, and facilities with lifecycle governance.">
-    Provider Data
-  </span>
-  <span data-tip="Ongoing and focused professional practice evaluation for quality and patient safety.">
-    OPPE / FPPE
-  </span>
-  <span data-tip="Regulated clinical and quality workflows with full auditability.">
-    Clinical Workflows
-  </span>
-  <span data-tip="Integration and normalization of data from EHR and EMR systems.">
-    EHR / EMR
-  </span>
+                          <span data-tip="Unified longitudinal patient record aggregating data across EHR/EMR, labs, and claims.">
+                            EPR
+                          </span>
+                          <span data-tip="Master data management for providers, clinicians, and facilities with lifecycle governance.">
+                            Provider Data
+                          </span>
+                          <span data-tip="Ongoing and focused professional practice evaluation for quality and patient safety.">
+                            OPPE / FPPE
+                          </span>
+                          <span data-tip="Regulated clinical and quality workflows with full auditability.">
+                            Clinical Workflows
+                          </span>
+                          <span data-tip="Integration and normalization of data from EHR and EMR systems.">
+                            EHR / EMR
+                          </span>
 </div>
 
                     </div>
