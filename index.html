@@ -1826,6 +1826,35 @@ html, body {
    --pill-bg: #f0fdfa;
   --pill-color: #115e59;
 }
+/* ===============================
+   FORCE MICRO-LABEL VISIBILITY (DESKTOP FIX)
+   =============================== */
+
+/* Allow pills + tooltips to escape containers */
+.micro-labels,
+.micro-labels *,
+.micro-labels-content {
+overflow: visible !important;
+}
+
+/* Ensure hover & click events work */
+.micro-labels,
+.micro-labels > span {
+  pointer-events: auto !important;
+}
+
+/* Force background paint on desktop */
+.micro-labels > span {
+  background-clip: padding-box !important;
+  isolation: isolate;
+  z-index: 5;
+}
+
+/* Force tooltip above all layers */
+.micro-labels > span::after,
+.micro-labels > span::before {
+  z-index: 99999 !important;
+}
 
     </style>
 </head>
@@ -2158,7 +2187,7 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
                             <span style="font-size: 2rem;">🏥</span>
                         </div>
                         <h4 style="font-size: 1.125rem; font-weight: 600; color: #1f2937; margin-bottom: 8px;">Healthcare SaaS Platforms & Regulatory Ownership</h4>
-                        <div class="micro-labels">
+                        <div class=".micro-labels">
                           <span class="pill-epr" data-tip="Unified longitudinal patient record aggregating data across EHR/EMR, labs, imaging, pharmacy, and claims.">
                             EPR
                           </span>
@@ -2191,7 +2220,7 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
                             <span style="font-size: 2rem;">📈</span>
                         </div>
                         <h4 style="font-size: 1.125rem; font-weight: 600; color: #1f2937; margin-bottom: 8px;">Enterprise Data & AI Platforms (Strategy & Governance)</h4>
-                        <div class="micro-labels">
+                        <div class=".micro-labels">
                           <span class="pill-data" data-tip="Enterprise-grade ingestion, normalization, and lineage of clinical and operational data.">
                             Core Data Platform
                           </span>
@@ -2223,7 +2252,7 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
                             <span style="font-size: 2rem;">🚀</span>
                         </div>
                         <h4 style="font-size: 1.125rem; font-weight: 600; color: #1f2937; margin-bottom: 8px;">Platform Governance & Cross-Functional Alignment</h4>
-                        <div class="micro-labels">
+                        <div class=".micro-labels">
                           <span class="pill-governance1" data-tip="Role-based access control, audit logging, and traceability across all platforms.">
                             Access & Audit Controls
                           </span>
