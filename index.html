@@ -1698,41 +1698,43 @@ html, body {
   cursor: default;
 }
 
-/* ================================
-   MICRO-LABEL PILLS (Director-grade)
-   ================================ */
+/* ===============================
+   Micro-label Pills (Desktop + Mobile FIX)
+   =============================== */
 
 .micro-labels {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 12px;
   justify-content: center;
+  margin-top: 12px;
 }
 
-/* Pill base */
-.micro-labels span {
-  position: relative;
-  display: inline-block;
+/* FORCE pill appearance on desktop */
+.micro-labels > span {
+  display: inline-flex;
+  align-items: center;
   padding: 6px 12px;
   font-size: 0.75rem;
   font-weight: 600;
   border-radius: 999px;
-  cursor: default;
   white-space: nowrap;
+  position: relative;
+  cursor: default;
+
+  /* CRITICAL FIX */
+  background-color: var(--pill-bg) !important;
+  color: var(--pill-color) !important;
 }
 
-/* ================================
-   TOOLTIP (hover / tap)
-   ================================ */
-
-.micro-labels span::after {
+/* Tooltip bubble */
+.micro-labels > span::after {
   content: attr(data-tip);
   position: absolute;
-  bottom: calc(100% + 10px);
+  bottom: 140%;
   left: 50%;
   transform: translateX(-50%);
-  background: #0f172a;
+  background: #111827;
   color: #ffffff;
   padding: 8px 10px;
   border-radius: 6px;
@@ -1741,91 +1743,88 @@ html, body {
   width: max-content;
   max-width: 260px;
   text-align: center;
-  white-space: normal;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.15s ease;
   z-index: 9999;
+  transition: opacity 0.2s ease;
 }
 
 /* Tooltip arrow */
-.micro-labels span::before {
+.micro-labels > span::before {
   content: "";
   position: absolute;
-  bottom: calc(100% + 2px);
+  bottom: 120%;
   left: 50%;
   transform: translateX(-50%);
   border-width: 6px;
   border-style: solid;
-  border-color: #0f172a transparent transparent transparent;
+  border-color: #111827 transparent transparent transparent;
   opacity: 0;
-  transition: opacity 0.15s ease;
+  transition: opacity 0.2s ease;
 }
 
-/* Show tooltip */
-.micro-labels span:hover::after,
-.micro-labels span:hover::before {
+.micro-labels > span:hover::after,
+.micro-labels > span:hover::before {
   opacity: 1;
 }
 
-/* Mobile (tap) */
+/* Mobile tap support */
 @media (hover: none) {
-  .micro-labels span:active::after,
-  .micro-labels span:active::before {
+  .micro-labels > span:active::after,
+  .micro-labels > span:active::before {
     opacity: 1;
   }
 }
-
-/* ================================
-   COLOR-CODED PLATFORM PILLS
-   ================================ */
-
-/* EPR / Patient */
 .pill-epr {
-  background: #e0f2fe;
-  color: #0369a1;
+  --pill-bg: #e0f2fe;
+  --pill-color: #0369a1;
 }
 
-/* Provider data */
 .pill-provider {
-  background: #dbeafe;
-  color: #1e40af;
+  --pill-bg: #dbeafe;
+  --pill-color: #1e40af;
 }
 
-/* Quality (OPPE / FPPE) */
 .pill-quality {
-  background: #ecfeff;
-  color: #0f766e;
+  --pill-bg: #ecfeff;
+  --pill-color: #0f766e;
 }
 
-/* Clinical workflows */
 .pill-workflow {
-  background: #f0fdfa;
-  color: #115e59;
+  --pill-bg: #f0fdfa;
+  --pill-color: #115e59;
 }
 
-/* Interoperability */
 .pill-interop {
-  background: #eef2ff;
-  color: #3730a3;
+  --pill-bg: #eef2ff;
+  --pill-color: #3730a3;
 }
 
-/* Core data */
 .pill-data {
-  background: #dcfce7;
-  color: #166534;
+  --pill-bg: #dcfce7;
+  --pill-color: #166534;
 }
 
-/* AI / ML */
 .pill-ai {
-  background: #ede9fe;
-  color: #5b21b6;
+  --pill-bg: #ede9fe;
+  --pill-color: #5b21b6;
 }
 
-/* Governance */
-.pill-governance {
-  background: #fff7ed;
-  color: #9a3412;
+.pill-governance1 {
+  --pill-bg: #fff7ed;
+  --pill-color: #9a3412;
+}
+.pill-governance2 {
+  --pill-bg: #fff7ed;
+  --pill-color: #9a3412;
+}
+.pill-governance3 {
+   --pill-bg: #ede9fe;
+  --pill-color: #5b21b6;
+}
+.pill-governance4 {
+   --pill-bg: #f0fdfa;
+  --pill-color: #115e59;
 }
 
     </style>
@@ -2225,19 +2224,19 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
                         </div>
                         <h4 style="font-size: 1.125rem; font-weight: 600; color: #1f2937; margin-bottom: 8px;">Platform Governance & Cross-Functional Alignment</h4>
                         <div class="micro-labels">
-                          <span class="pill-governance" data-tip="Role-based access control, audit logging, and traceability across all platforms.">
+                          <span class="pill-governance1" data-tip="Role-based access control, audit logging, and traceability across all platforms.">
                             Access & Audit Controls
                           </span>
                         
-                          <span class="pill-governance" data-tip="Shared platform services including notifications, reporting engines, and rules frameworks.">
+                          <span class="pill-governance2" data-tip="Shared platform services including notifications, reporting engines, and rules frameworks.">
                             Shared Platform Services
                           </span>
                         
-                          <span class="pill-governance" data-tip="HIPAA-aligned compliance oversight, data retention, and privacy controls.">
+                          <span class="pill-governance3" data-tip="HIPAA-aligned compliance oversight, data retention, and privacy controls.">
                             Compliance Oversight
                           </span>
                         
-                          <span class="pill-governance" data-tip="Cross-platform standards for performance, reliability, and scalability.">
+                          <span class="pill-governance4" data-tip="Cross-platform standards for performance, reliability, and scalability.">
                             Platform Standards
                           </span>
                         </div>
