@@ -1763,6 +1763,107 @@ html, body {
     opacity: 1;
   }
 }
+.micro-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.micro-labels span {
+  position: relative;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: default;
+  white-space: nowrap;
+}
+.micro-labels span::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111827;
+  color: #ffffff;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  line-height: 1.4;
+  width: max-content;
+  max-width: 240px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 9999;
+}
+
+/* Tooltip arrow */
+.micro-labels span::before {
+  content: "";
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #111827 transparent transparent transparent;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.micro-labels span:hover::after,
+.micro-labels span:hover::before {
+  opacity: 1;
+}
+@media (hover: none) {
+  .micro-labels span:active::after,
+  .micro-labels span:active::before {
+    opacity: 1;
+  }
+}
+.pill-epr {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.pill-provider {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.pill-quality {
+  background: #ecfeff;
+  color: #0f766e;
+}
+
+.pill-workflow {
+  background: #f0fdfa;
+  color: #115e59;
+}
+
+.pill-interop {
+  background: #eef2ff;
+  color: #3730a3;
+}
+.pill-data {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.pill-ai {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+.pill-governance {
+  background: #fef3c7;
+  color: #92400e;
+}
+.pill-governance {
+  background: #fff7ed;
+  color: #9a3412;
+}
 
     </style>
 </head>
@@ -2096,22 +2197,27 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
                         </div>
                         <h4 style="font-size: 1.125rem; font-weight: 600; color: #1f2937; margin-bottom: 8px;">Healthcare SaaS Platforms & Regulatory Ownership</h4>
                         <div class="micro-labels">
-                          <span data-tip="Unified longitudinal patient record aggregating data across EHR/EMR, labs, and claims.">
+                          <span class="pill-epr" data-tip="Unified longitudinal patient record aggregating data across EHR/EMR, labs, imaging, pharmacy, and claims.">
                             EPR
                           </span>
-                          <span data-tip="Master data management for providers, clinicians, and facilities with lifecycle governance.">
+                        
+                          <span class="pill-provider" data-tip="Master data management for providers, clinicians, and facilities across credentialing and lifecycle governance.">
                             Provider Data
                           </span>
-                          <span data-tip="Ongoing and focused professional practice evaluation for quality and patient safety.">
+                        
+                          <span class="pill-quality" data-tip="Ongoing and focused professional practice evaluation to ensure provider quality and patient safety.">
                             OPPE / FPPE
                           </span>
-                          <span data-tip="Regulated clinical and quality workflows with full auditability.">
+                        
+                          <span class="pill-workflow" data-tip="Regulated clinical and quality workflows with full auditability, SLAs, and traceability.">
                             Clinical Workflows
                           </span>
-                          <span data-tip="Integration and normalization of data from EHR and EMR systems.">
+                        
+                          <span class="pill-interop" data-tip="Integration and normalization of clinical data from EHR and EMR systems.">
                             EHR / EMR
                           </span>
-</div>
+                        </div>
+
 
                     </div>
                     <div style="text-align: center;">
@@ -2120,22 +2226,27 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
                         </div>
                         <h4 style="font-size: 1.125rem; font-weight: 600; color: #1f2937; margin-bottom: 8px;">Enterprise Data & AI Platforms (Strategy & Governance)</h4>
                         <div class="micro-labels">
-  <span data-tip="Foundational ingestion, normalization, and lineage for healthcare data.">
-    Core Data Platform
-  </span>
-  <span data-tip="Decision-grade dashboards for clinical, operational, and executive teams.">
-    Clinical Analytics
-  </span>
-  <span data-tip="Governed AI/ML capabilities for risk scoring, insights, and anomaly detection.">
-    AI Enablement
-  </span>
-  <span data-tip="Standards, controls, and policies ensuring data quality and trust.">
-    Data Governance
-  </span>
-  <span data-tip="Reliable clinical data exchange using HL7, FHIR, CCD, and APIs.">
-    Data Interoperability
-  </span>
-</div>
+                          <span class="pill-data" data-tip="Enterprise-grade ingestion, normalization, and lineage of clinical and operational data.">
+                            Core Data Platform
+                          </span>
+                        
+                          <span class="pill-data" data-tip="Decision-grade clinical, operational, and executive analytics with governed metric definitions.">
+                            Clinical Analytics
+                          </span>
+                        
+                          <span class="pill-ai" data-tip="Governed AI enablement for risk scoring, anomaly detection, and quality insights.">
+                            AI Enablement
+                          </span>
+                        
+                          <span class="pill-governance" data-tip="Data quality rules, stewardship, access policies, and compliance oversight.">
+                            Data Governance
+                          </span>
+                        
+                          <span class="pill-interop" data-tip="Standards-based healthcare data exchange using HL7, FHIR, CCD, and APIs.">
+                            Data Interoperability
+                          </span>
+                        </div>
+
 
                     </div>
                     <div style="text-align: center;">
@@ -2144,19 +2255,23 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
                         </div>
                         <h4 style="font-size: 1.125rem; font-weight: 600; color: #1f2937; margin-bottom: 8px;">Platform Governance & Cross-Functional Alignment</h4>
                         <div class="micro-labels">
-  <span data-tip="Enterprise-wide governance defining decision rights and platform standards.">
-    Platform Governance
-  </span>
-  <span data-tip="Role-based access, audit trails, and traceability for regulated systems.">
-    Access & Audit Controls
-  </span>
-  <span data-tip="Reusable services enabling consistency and scale across products.">
-    Shared Services
-  </span>
-  <span data-tip="Oversight of HIPAA, PHI/PII, and regulatory compliance requirements.">
-    Compliance Oversight
-  </span>
-</div>
+                          <span class="pill-governance" data-tip="Role-based access control, audit logging, and traceability across all platforms.">
+                            Access & Audit Controls
+                          </span>
+                        
+                          <span class="pill-governance" data-tip="Shared platform services including notifications, reporting engines, and rules frameworks.">
+                            Shared Platform Services
+                          </span>
+                        
+                          <span class="pill-governance" data-tip="HIPAA-aligned compliance oversight, data retention, and privacy controls.">
+                            Compliance Oversight
+                          </span>
+                        
+                          <span class="pill-governance" data-tip="Cross-platform standards for performance, reliability, and scalability.">
+                            Platform Standards
+                          </span>
+                        </div>
+
 
                     </div>
                 </div>
