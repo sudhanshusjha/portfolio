@@ -1699,7 +1699,7 @@ html, body {
 }
 
 /* ===============================
-   Micro-label Pills (Desktop + Mobile FIX)
+   MICRO-LABEL PILLS — FINAL STABLE VERSION
    =============================== */
 
 .micro-labels {
@@ -1710,8 +1710,7 @@ html, body {
   margin-top: 12px;
 }
 
-/* FORCE pill appearance on desktop */
-.micro-labels > span {
+.micro-labels span {
   display: inline-flex;
   align-items: center;
   padding: 6px 12px;
@@ -1721,39 +1720,34 @@ html, body {
   white-space: nowrap;
   position: relative;
   cursor: default;
-
-  /* CRITICAL FIX */
-  background-color: var(--pill-bg) !important;
-  color: var(--pill-color) !important;
 }
 
-/* Tooltip bubble */
-.micro-labels > span::after {
+/* Tooltip */
+.micro-labels span::after {
   content: attr(data-tip);
   position: absolute;
-  bottom: 140%;
+  bottom: 130%;
   left: 50%;
   transform: translateX(-50%);
   background: #111827;
   color: #ffffff;
-  padding: 8px 10px;
+  padding: 6px 10px;
   border-radius: 6px;
   font-size: 0.7rem;
   line-height: 1.4;
-  width: max-content;
   max-width: 260px;
   text-align: center;
+  white-space: normal;
   opacity: 0;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 1000;
   transition: opacity 0.2s ease;
 }
 
-/* Tooltip arrow */
-.micro-labels > span::before {
+.micro-labels span::before {
   content: "";
   position: absolute;
-  bottom: 120%;
+  bottom: 115%;
   left: 50%;
   transform: translateX(-50%);
   border-width: 6px;
@@ -1763,98 +1757,37 @@ html, body {
   transition: opacity 0.2s ease;
 }
 
-.micro-labels > span:hover::after,
-.micro-labels > span:hover::before {
+.micro-labels span:hover::after,
+.micro-labels span:hover::before {
   opacity: 1;
 }
 
-/* Mobile tap support */
+/* Mobile: pills visible, tooltip optional */
 @media (hover: none) {
-  .micro-labels > span:active::after,
-  .micro-labels > span:active::before {
+  .micro-labels span:active::after,
+  .micro-labels span:active::before {
     opacity: 1;
   }
 }
-.pill-epr {
-  --pill-bg: #e0f2fe;
-  --pill-color: #0369a1;
-}
 
-.pill-provider {
-  --pill-bg: #dbeafe;
-  --pill-color: #1e40af;
-}
-
-.pill-quality {
-  --pill-bg: #ecfeff;
-  --pill-color: #0f766e;
-}
-
-.pill-workflow {
-  --pill-bg: #f0fdfa;
-  --pill-color: #115e59;
-}
-
-.pill-interop {
-  --pill-bg: #eef2ff;
-  --pill-color: #3730a3;
-}
-
-.pill-data {
-  --pill-bg: #dcfce7;
-  --pill-color: #166534;
-}
-
-.pill-ai {
-  --pill-bg: #ede9fe;
-  --pill-color: #5b21b6;
-}
-
-.pill-governance1 {
-  --pill-bg: #fff7ed;
-  --pill-color: #9a3412;
-}
-.pill-governance2 {
-  --pill-bg: #fff7ed;
-  --pill-color: #9a3412;
-}
-.pill-governance3 {
-   --pill-bg: #ede9fe;
-  --pill-color: #5b21b6;
-}
-.pill-governance4 {
-   --pill-bg: #f0fdfa;
-  --pill-color: #115e59;
-}
 /* ===============================
-   FORCE MICRO-LABEL VISIBILITY (DESKTOP FIX)
+   PILL COLORS (NO VARIABLES)
    =============================== */
 
-/* Allow pills + tooltips to escape containers */
-.micro-labels,
-.micro-labels *,
-.micro-labels-content {
-overflow: visible !important;
-}
+.pill-epr        { background:#e0f2fe; color:#0369a1; }
+.pill-provider   { background:#dbeafe; color:#1e40af; }
+.pill-quality    { background:#ecfeff; color:#0f766e; }
+.pill-workflow   { background:#f0fdfa; color:#115e59; }
+.pill-interop    { background:#eef2ff; color:#3730a3; }
 
-/* Ensure hover & click events work */
-.micro-labels,
-.micro-labels > span {
-  pointer-events: auto !important;
-}
+.pill-data       { background:#dcfce7; color:#166534; }
+.pill-ai         { background:#ede9fe; color:#5b21b6; }
+.pill-governance { background:#fff7ed; color:#9a3412; }
 
-/* Force background paint on desktop */
-.micro-labels > span {
-  background-clip: padding-box !important;
-  isolation: isolate;
-  z-index: 5;
-}
-
-/* Force tooltip above all layers */
-.micro-labels > span::after,
-.micro-labels > span::before {
-  z-index: 99999 !important;
-}
+.pill-governance1 { background:#fff7ed; color:#9a3412; }
+.pill-governance2 { background:#fff7ed; color:#9a3412; }
+.pill-governance3 { background:#ede9fe; color:#5b21b6; }
+.pill-governance4 { background:#f0fdfa; color:#115e59; }
 
     </style>
 </head>
@@ -2187,7 +2120,7 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
                             <span style="font-size: 2rem;">🏥</span>
                         </div>
                         <h4 style="font-size: 1.125rem; font-weight: 600; color: #1f2937; margin-bottom: 8px;">Healthcare SaaS Platforms & Regulatory Ownership</h4>
-                        <div class=".micro-labels">
+                        <div class="micro-labels">
                           <span class="pill-epr" data-tip="Unified longitudinal patient record aggregating data across EHR/EMR, labs, imaging, pharmacy, and claims.">
                             EPR
                           </span>
@@ -2220,7 +2153,7 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
                             <span style="font-size: 2rem;">📈</span>
                         </div>
                         <h4 style="font-size: 1.125rem; font-weight: 600; color: #1f2937; margin-bottom: 8px;">Enterprise Data & AI Platforms (Strategy & Governance)</h4>
-                        <div class=".micro-labels">
+                        <div class="micro-labels">
                           <span class="pill-data" data-tip="Enterprise-grade ingestion, normalization, and lineage of clinical and operational data.">
                             Core Data Platform
                           </span>
@@ -2252,7 +2185,7 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
                             <span style="font-size: 2rem;">🚀</span>
                         </div>
                         <h4 style="font-size: 1.125rem; font-weight: 600; color: #1f2937; margin-bottom: 8px;">Platform Governance & Cross-Functional Alignment</h4>
-                        <div class=".micro-labels">
+                        <div class="micro-labels">
                           <span class="pill-governance1" data-tip="Role-based access control, audit logging, and traceability across all platforms.">
                             Access & Audit Controls
                           </span>
