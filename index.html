@@ -1593,45 +1593,21 @@ html, body {
 
 /* ===== COLOR THEMES ===== */
 
-/* Blue */
-.theme-blue {
-  border-left: 5px solid #3b82f6;
+theme-blue {
+  color: #2563eb; /* stronger blue */
 }
-.theme-blue h3 { color: #1e3a8a; }
-.theme-blue .platform-desc,
-.theme-blue li { color: #1f2937; }
 
-/* Green */
-.theme-green {
-  border-left: 5px solid #10b981;
-}
-.theme-green h3 { color: #065f46; }
-.theme-green .platform-desc,
-.theme-green li { color: #064e3b; }
-
-/* Purple */
 .theme-purple {
-  border-left: 5px solid #8b5cf6;
+  color: #7c3aed; /* stronger purple */
 }
-.theme-purple h3 { color: #5b21b6; }
-.theme-purple .platform-desc,
-.theme-purple li { color: #4c1d95; }
 
-/* Amber */
 .theme-amber {
-  border-left: 5px solid #f59e0b;
+  color: #d97706; /* darker amber */
 }
-.theme-amber h3 { color: #92400e; }
-.theme-amber .platform-desc,
-.theme-amber li { color: #78350f; }
 
-/* Slate / Neutral */
 .theme-slate {
-  border-left: 5px solid #64748b;
+  color: #475569; /* darker slate */
 }
-.theme-slate h3 { color: #0f172a; }
-.theme-slate .platform-desc,
-.theme-slate li { color: #334155; }
 
 /* Shared Platform Capabilities */
 .shared-platforms {
@@ -1679,6 +1655,27 @@ html, body {
   color: #334155;
   margin-bottom: 12px;
   line-height: 1.5;
+}
+.map-layer {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px 24px;
+  position: relative;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Strong left accent bar (guaranteed visible) */
+.map-layer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: currentColor;
 }
 
     </style>
