@@ -1698,52 +1698,57 @@ html, body {
   cursor: default;
 }
 
-/* === Micro-labels container === */
+/* ================================
+   MICRO-LABEL PILLS (Director-grade)
+   ================================ */
+
 .micro-labels {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  margin-top: 12px;
   justify-content: center;
-  margin-top: 10px;
 }
 
-/* === Micro-label pills === */
+/* Pill base */
 .micro-labels span {
   position: relative;
-  font-size: 0.7rem;
-  padding: 5px 10px;
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
   border-radius: 999px;
-  background: #f1f5f9;
-  color: #334155;
-  font-weight: 500;
   cursor: default;
   white-space: nowrap;
 }
 
-/* === Tooltip bubble === */
+/* ================================
+   TOOLTIP (hover / tap)
+   ================================ */
+
 .micro-labels span::after {
   content: attr(data-tip);
   position: absolute;
-  bottom: calc(100% + 8px);
+  bottom: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%);
   background: #0f172a;
   color: #ffffff;
-  padding: 6px 10px;
+  padding: 8px 10px;
   border-radius: 6px;
-  font-size: 0.65rem;
-  line-height: 1.3;
+  font-size: 0.7rem;
+  line-height: 1.4;
   width: max-content;
-  max-width: 220px;
+  max-width: 260px;
   text-align: center;
   white-space: normal;
   opacity: 0;
   pointer-events: none;
+  transition: opacity 0.15s ease;
   z-index: 9999;
-  transition: opacity 0.2s ease;
 }
 
-/* === Tooltip arrow === */
+/* Tooltip arrow */
 .micro-labels span::before {
   content: "";
   position: absolute;
@@ -1754,119 +1759,70 @@ html, body {
   border-style: solid;
   border-color: #0f172a transparent transparent transparent;
   opacity: 0;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.15s ease;
 }
 
-/* === Show tooltip on hover (desktop) === */
+/* Show tooltip */
 .micro-labels span:hover::after,
 .micro-labels span:hover::before {
   opacity: 1;
 }
 
-/* === Mobile support (long press / tap) === */
+/* Mobile (tap) */
 @media (hover: none) {
   .micro-labels span:active::after,
   .micro-labels span:active::before {
     opacity: 1;
   }
 }
-.micro-labels {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 12px;
-}
-.micro-labels span {
-  position: relative;
-  padding: 6px 12px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  border-radius: 999px;
-  cursor: default;
-  white-space: nowrap;
-}
-.micro-labels span::after {
-  content: attr(data-tip);
-  position: absolute;
-  bottom: 140%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #111827;
-  color: #ffffff;
-  padding: 8px 10px;
-  border-radius: 6px;
-  font-size: 0.7rem;
-  line-height: 1.4;
-  width: max-content;
-  max-width: 240px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-  z-index: 9999;
-}
 
-/* Tooltip arrow */
-.micro-labels span::before {
-  content: "";
-  position: absolute;
-  bottom: 120%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 6px;
-  border-style: solid;
-  border-color: #111827 transparent transparent transparent;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
+/* ================================
+   COLOR-CODED PLATFORM PILLS
+   ================================ */
 
-.micro-labels span:hover::after,
-.micro-labels span:hover::before {
-  opacity: 1;
-}
-@media (hover: none) {
-  .micro-labels span:active::after,
-  .micro-labels span:active::before {
-    opacity: 1;
-  }
-}
+/* EPR / Patient */
 .pill-epr {
   background: #e0f2fe;
   color: #0369a1;
 }
 
+/* Provider data */
 .pill-provider {
   background: #dbeafe;
   color: #1e40af;
 }
 
+/* Quality (OPPE / FPPE) */
 .pill-quality {
   background: #ecfeff;
   color: #0f766e;
 }
 
+/* Clinical workflows */
 .pill-workflow {
   background: #f0fdfa;
   color: #115e59;
 }
 
+/* Interoperability */
 .pill-interop {
   background: #eef2ff;
   color: #3730a3;
 }
+
+/* Core data */
 .pill-data {
   background: #dcfce7;
   color: #166534;
 }
 
+/* AI / ML */
 .pill-ai {
   background: #ede9fe;
   color: #5b21b6;
 }
 
-.pill-governance {
-  background: #fef3c7;
-  color: #92400e;
-}
+/* Governance */
 .pill-governance {
   background: #fff7ed;
   color: #9a3412;
