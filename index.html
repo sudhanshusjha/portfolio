@@ -2232,6 +2232,46 @@ html, body {
 .cta-secondary:hover {
   background: #eff6ff;
 }
+.leadership-engagement {
+  margin-top: 64px;
+  padding: 32px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #eef4ff 0%, #f7faff 100%);
+  border: 1px solid #dbe7ff;
+}
+
+.leadership-engagement h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 24px;
+}
+
+.engagement-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.engagement-list li {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #374151;
+  padding-left: 20px;
+  position: relative;
+}
+
+.engagement-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #2563eb;
+  font-weight: 700;
+}
 
     </style>
 </head>
@@ -3032,23 +3072,25 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
                 </a>
             </div>
             
-            <div class="availability-card">
-                <h4 class="availability-title">Current Availability</h4>
-                <div class="status-grid">
-                    <div class="status-item">
-                        <div class="status-dot"></div>
-                        <span>Head, Director & Associate Director leadership opportunities in Product & Program Management</span>
-                    </div>
-                    <div class="status-item">
-                        <div class="status-dot"></div>
-                        <span>Strategic consulting, enterprise SaaS, and digital transformation initiatives</span>
-                    </div>
-                    <div class="status-item">
-                        <div class="status-dot"></div>
-                        <span>Speaking, mentoring & thought leadership collaborations in the tech ecosystem</span>
-                    </div>
-                </div>
-            </div>
+            <section class="leadership-engagement">
+              <h3>Leadership Engagement Focus</h3>
+            
+              <ul class="engagement-list">
+                <li>
+                  Select <strong>Head, Director & Associate Director</strong> roles across
+                  Product, Platform, and Program Leadership
+                </li>
+                <li>
+                  Strategic advisory across <strong>enterprise SaaS, healthcare platforms,
+                  data, and AI-led transformation initiatives</strong>
+                </li>
+                <li>
+                  Speaking, mentoring, and thought leadership collaborations across the
+                  technology ecosystem
+                </li>
+              </ul>
+            </section>
+
             
             <div style="text-align: center; margin-top: 48px; padding-top: 32px; border-top: 1px solid #e5e7eb;">
                 <p style="margin-top: 24px; color: #6b7280; font-size: 0.875rem; max-width: 512px; margin-left: auto; margin-right: auto; line-height: 1.5;">
