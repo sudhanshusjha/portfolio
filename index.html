@@ -1896,6 +1896,51 @@ html, body {
 .micro-labels span:active::after {
   opacity: 1;
 }
+/* === PROJECT CARD NORMALIZATION === */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* ICON STRIP — force identical height */
+.project-card .card-icon {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* TITLE — clamp to 2 lines */
+.project-card h3 {
+  min-height: 3.2em;          /* forces equal title block */
+  line-height: 1.6;
+}
+
+/* TAGLINE — single-line, equal height */
+.project-card .card-tagline {
+  min-height: 1.6em;
+}
+
+/* METRICS — equal row height */
+.project-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  min-height: 84px;
+  align-items: center;
+}
+
+/* ACHIEVEMENTS — visually highlighted block */
+.project-achievements {
+  margin-top: 16px;
+  padding-left: 16px;
+  border-left: 3px solid #2563eb;
+}
+
+.project-achievements li {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
 
     </style>
 </head>
