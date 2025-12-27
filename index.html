@@ -2173,6 +2173,61 @@ html, body {
     display: block;
   }
 }
+/* CTA Container */
+.connect-cta {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Base Pill */
+.cta-pill {
+  padding: 14px 34px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/* Primary CTA */
+.cta-pill.primary {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.25);
+}
+
+.cta-pill.primary:hover {
+  background: #1e4fd8;
+  transform: translateY(-2px);
+}
+
+/* Ghost / Secondary CTA */
+.cta-pill.ghost {
+  background: transparent;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+}
+
+.cta-pill.ghost:hover {
+  background: #2563eb;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Mobile stacking */
+@media (max-width: 640px) {
+  .connect-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
     </style>
 </head>
@@ -2913,17 +2968,22 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
   
    
  
-<div style="margin-top: 12px;">
-  <a href="https://www.linkedin.com/in/sudhanshu-s-jha/" class="cta-btn">
-    Start a Conversation
-  </a>
-  <a href="assets/Sudhanshu_Shekhar_Jha_Resume.pdf"
-     class="cta-secondary"
+<div class="connect-cta">
+  <a href="https://www.linkedin.com/in/sudhanshu-s-jha/"
+     class="cta-pill primary"
      target="_blank"
      rel="noopener">
-     Download Resume
+    Start a Conversation
   </a>
-</div>          
+
+  <a href="assets/Sudhanshu_Shekhar_Jha_Resume.pdf"
+     class="cta-pill ghost"
+     target="_blank"
+     rel="noopener">
+    Download Resume
+  </a>
+</div>
+        
             <div class="contact-grid">
                 <a href="mailto:sudhanshurg@gmail.com" class="contact-item">
                     <div class="contact-icon">📧</div>
