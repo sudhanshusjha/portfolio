@@ -1941,6 +1941,75 @@ html, body {
   margin-bottom: 8px;
   font-weight: 500;
 }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+.project-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 6px;
+}
+
+.card-subtitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+.card-desc {
+  font-size: 0.95rem;
+  color: #374151;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.metrics {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.metrics div {
+  text-align: left;
+}
+
+.metrics strong {
+  font-size: 1.3rem;
+  color: #2563eb;
+  display: block;
+}
+
+.metrics span {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.highlights {
+  padding-left: 18px;
+  border-left: 3px solid #2563eb;
+  list-style: disc;
+}
+
+.highlights li {
+  font-size: 0.9rem;
+  color: #374151;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
 
     </style>
 </head>
@@ -2510,181 +2579,103 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
         <div class="section-container">
             <h2 class="section-title">Key Projects & Achievements</h2>
             <p class="section-subtitle">Transformative platform initiatives demonstrating strategic leadership, platform ownership, and measurable business impact across healthcare SaaS and enterprise ecosystems.</p>
-            
             <div class="projects-grid">
-                <div class="project-card">
 
-                      <!-- ICON BAR (fixed height) -->
-                      <div class="project-icon-bar">
-                        <span class="project-icon">📊</span>
-                      </div>
-                    
-                      <!-- TITLE -->
-                      <h3 class="project-title">
-                        EHR Analytics & Provider Engagement Platform
-                      </h3>
-                    
-                      <!-- TAGLINE -->
-                      <div class="project-tagline">
-                        Platform Strategy & Ownership
-                      </div>
-                    
-                      <!-- DESCRIPTION -->
-                      <p class="project-description">
-                        Led platform-level evolution of EHR analytics enabling provider engagement,
-                        decision-grade insights, and executive visibility across clinical workflows.
-                      </p>
-                    
-                      <!-- METRICS ROW -->
-                      <div class="project-metrics">
-                        <div class="metric">
-                          <div class="metric-value">30%</div>
-                          <div class="metric-label">Engagement Lift</div>
-                        </div>
-                        <div class="metric">
-                          <div class="metric-value">20%</div>
-                          <div class="metric-label">Satisfaction Gain</div>
-                        </div>
-                        <div class="metric">
-                          <div class="metric-value">18 mo</div>
-                          <div class="metric-label">Platform Scale</div>
-                        </div>
-                      </div>
-                    
-                      <!-- ACHIEVEMENTS -->
-                      <ul class="project-achievements">
-                        <li>Defined multi-year analytics roadmap aligned to quality outcomes</li>
-                        <li>Standardized executive KPI dashboards across clinical leadership</li>
-                        <li>Improved decision confidence via unified longitudinal insights</li>
-                      </ul>
+  <!-- Card 1 -->
+  <div class="project-card">
+    <h3>EHR Analytics & Provider Engagement Platform</h3>
+    <p class="card-subtitle">Platform Strategy & Ownership</p>
 
-                    </div>
+    <p class="card-desc">
+      Led platform-level evolution of EHR analytics capabilities, enabling provider engagement,
+      decision-grade insights, and executive visibility across clinical workflows.
+    </p>
 
-                      <div class="project-card">
-                    
-                      <div class="project-icon-bar">
-                        <span class="project-icon">🧠</span>
-                      </div>
-                    
-                      <h3 class="project-title">
-                        GenAI Analytics & Decision Enablement Platform
-                      </h3>
-                    
-                      <div class="project-tagline">
-                        AI Platform Enablement
-                      </div>
-                    
-                      <p class="project-description">
-                        Designed and governed enterprise-grade AI and GenAI capabilities to accelerate
-                        insight generation, improve analytical depth, and support executive decisions.
-                      </p>
-                    
-                      <div class="project-metrics">
-                        <div class="metric">
-                          <div class="metric-value">40%</div>
-                          <div class="metric-label">Time-to-Insight</div>
-                        </div>
-                        <div class="metric">
-                          <div class="metric-value">40%</div>
-                          <div class="metric-label">Decision Accuracy</div>
-                        </div>
-                        <div class="metric">
-                          <div class="metric-value">Full</div>
-                          <div class="metric-label">AI Framework</div>
-                        </div>
-                      </div>
-                    
-                      <ul class="project-achievements">
-                        <li>Launched governed AI modules embedded into analytics platforms</li>
-                        <li>Enabled explainable, validated AI outputs aligned to compliance</li>
-                        <li>Improved executive visibility via insight-led decision frameworks</li>
-                      </ul>
-                    
-                    </div>
-<div class="project-card">
+    <div class="metrics">
+      <div><strong>30%</strong><span>Engagement Lift</span></div>
+      <div><strong>20%</strong><span>Satisfaction Gain</span></div>
+      <div><strong>18 mo</strong><span>Platform Scale</span></div>
+    </div>
 
-  <div class="project-icon-bar">
-    <span class="project-icon">⚡</span>
+    <ul class="highlights">
+      <li>Defined multi-year analytics roadmap aligned to quality and provider outcomes</li>
+      <li>Standardized executive KPI dashboards across clinical leadership</li>
+      <li>Improved decision confidence via unified longitudinal insights</li>
+    </ul>
   </div>
 
-  <h3 class="project-title">
-    Enterprise Data Governance & Efficiency Platform
-  </h3>
+  <!-- Card 2 -->
+  <div class="project-card">
+    <h3>GenAI Analytics & Decision Enablement Platform</h3>
+    <p class="card-subtitle">AI Platform Enablement</p>
 
-  <div class="project-tagline">
-    Enterprise Data Governance
+    <p class="card-desc">
+      Designed and governed enterprise-grade AI and GenAI capabilities to accelerate insight generation,
+      improve analytical depth, and support executive decision-making.
+    </p>
+
+    <div class="metrics">
+      <div><strong>40%</strong><span>Time-to-Insight</span></div>
+      <div><strong>40%</strong><span>Decision Accuracy</span></div>
+      <div><strong>Full</strong><span>AI Framework</span></div>
+    </div>
+
+    <ul class="highlights">
+      <li>Launched governed AI modules embedded into analytics platforms</li>
+      <li>Enabled explainable, validated AI outputs aligned to healthcare compliance</li>
+      <li>Improved executive visibility through insight-led decision frameworks</li>
+    </ul>
   </div>
 
-  <p class="project-description">
-    Established enterprise-wide data governance and lifecycle platforms to improve
-    data reliability, compliance posture, and operational efficiency.
-  </p>
+  <!-- Card 3 -->
+  <div class="project-card">
+    <h3>Enterprise Data Governance & Efficiency Platform</h3>
+    <p class="card-subtitle">Enterprise Data Governance</p>
 
-  <div class="project-metrics">
-    <div class="metric">
-      <div class="metric-value">30%</div>
-      <div class="metric-label">Cost Reduction</div>
+    <p class="card-desc">
+      Established enterprise-wide data governance and lifecycle platforms to improve data reliability,
+      compliance posture, and operational efficiency.
+    </p>
+
+    <div class="metrics">
+      <div><strong>30%</strong><span>Cost Reduction</span></div>
+      <div><strong>20%</strong><span>Processing Efficiency</span></div>
+      <div><strong>25%</strong><span>Predictability</span></div>
     </div>
-    <div class="metric">
-      <div class="metric-value">20%</div>
-      <div class="metric-label">Processing Efficiency</div>
-    </div>
-    <div class="metric">
-      <div class="metric-value">25%</div>
-      <div class="metric-label">Predictability</div>
-    </div>
+
+    <ul class="highlights">
+      <li>Implemented governed archival and data retention frameworks</li>
+      <li>Improved enterprise data processing via standardized pipelines</li>
+      <li>Introduced governance discipline improving execution predictability</li>
+    </ul>
   </div>
 
-  <ul class="project-achievements">
-    <li>Implemented governed archival and data retention frameworks</li>
-    <li>Improved enterprise data processing through standardized pipelines</li>
-    <li>Introduced governance discipline improving execution predictability</li>
-  </ul>
+  <!-- Card 4 -->
+  <div class="project-card">
+    <h3>Healthcare SaaS Adoption & Growth Platform</h3>
+    <p class="card-subtitle">Platform Adoption & Growth</p>
+
+    <p class="card-desc">
+      Led platform-level adoption and growth initiatives across B2B healthcare SaaS products,
+      optimizing engagement mechanics and clinical workflows.
+    </p>
+
+    <div class="metrics">
+      <div><strong>35%</strong><span>Adoption Lift</span></div>
+      <div><strong>30%</strong><span>Engagement Gain</span></div>
+      <div><strong>25%</strong><span>Feature Impact</span></div>
+    </div>
+
+    <ul class="highlights">
+      <li>Improved adoption through outcome-aligned platform capabilities</li>
+      <li>Increased engagement via data-driven interaction models</li>
+      <li>Reduced operational burden through workflow optimization</li>
+    </ul>
+  </div>
 
 </div>
 
-                <div class="project-card">
-
-  <div class="project-icon-bar">
-    <span class="project-icon">🏥</span>
-  </div>
-
-  <h3 class="project-title">
-    Healthcare SaaS Adoption & Growth Platform
-  </h3>
-
-  <div class="project-tagline">
-    Platform Adoption & Growth
-  </div>
-
-  <p class="project-description">
-    Led platform-level adoption and growth initiatives across B2B healthcare SaaS
-    products, optimizing engagement mechanics and clinical workflows.
-  </p>
-
-  <div class="project-metrics">
-    <div class="metric">
-      <div class="metric-value">35%</div>
-      <div class="metric-label">Adoption Lift</div>
-    </div>
-    <div class="metric">
-      <div class="metric-value">30%</div>
-      <div class="metric-label">Engagement Gain</div>
-    </div>
-    <div class="metric">
-      <div class="metric-value">25%</div>
-      <div class="metric-label">Feature Impact</div>
-    </div>
-  </div>
-
-  <ul class="project-achievements">
-    <li>Improved adoption through outcome-aligned platform capabilities</li>
-    <li>Increased engagement via data-driven interaction models</li>
-    <li>Reduced operational burden through workflow optimization</li>
-  </ul>
-
-</div>
-
+            
             </div>
 
             <!-- Overall Impact Summary -->
@@ -2693,6 +2684,7 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
                 <p class="impact-anchor">
                   Across regulated healthcare SaaS and enterprise data & AI platforms
                 </p>
+               
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
                     <div style="text-align: center;">
                         <div style="font-size: 3rem; font-weight: 700; color: #2563eb; margin-bottom: 8px;">30%</div>
