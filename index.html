@@ -2204,34 +2204,46 @@ html, body {
   flex-wrap: wrap;
 }
 
+/* Primary CTA (already working) */
 .cta-primary {
-  background: #2563eb;
-  color: #ffffff;
-  padding: 12px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
   border-radius: 999px;
+  background: #3b5bdb;
+  color: #ffffff;
   font-weight: 600;
   text-decoration: none;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 0.1s ease;
 }
 
 .cta-primary:hover {
-  background: #1e40af;
+  background: #2f4fd8;
+  transform: translateY(-1px);
 }
 
+/* Secondary (Ghost) CTA */
 .cta-secondary {
-  border: 1.5px solid #2563eb;
-  color: #2563eb;
-  padding: 12px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
   border-radius: 999px;
+  border: 2px solid #3b5bdb;
+  color: #3b5bdb;
   font-weight: 600;
   text-decoration: none;
   background: transparent;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
 }
 
 .cta-secondary:hover {
-  background: #eff6ff;
+  background: #3b5bdb;
+  color: #ffffff;
+  transform: translateY(-1px);
 }
+
 .leadership-engagement {
   margin-top: 64px;
   padding: 32px;
@@ -3183,17 +3195,15 @@ I partner closely with engineering, data, clinical, and executive stakeholders t
   </p>
 
   <p>
-    📄 <a
-      href="/assets/Sudhanshu_Shekhar_Jha_Resume.pdf"
-      target="_blank"
-      rel="noopener"
-      onclick="gtag('event', 'download_resume', {
-        event_category: 'CTA',
-        event_label: 'Footer Resume Download'
-      });"
-    >
-      Download Resume
-    </a>
+    <a
+  href="/assets/Sudhanshu_Shekhar_Jha_Resume.pdf?utm_source=linkedin&utm_medium=cta&utm_campaign=portfolio_resume"
+  class="cta-secondary"
+  target="_blank"
+  rel="noopener"
+>
+  Download Resume
+</a>
+
   </p>
 
   <p class="footer-note">
